@@ -55,7 +55,13 @@ const ChatBox = () => {
         />
       </Stack>
 
-      <Box bgColor={"gray.100"} borderRadius={20} boxSize={450} h={580}>
+      <Box
+        boxShadow={`0 10px 20px -2px gray`}
+        bgColor={"gray.100"}
+        borderRadius={20}
+        boxSize={450}
+        h={580}
+      >
         <StepperBox />
       </Box>
     </HStack>

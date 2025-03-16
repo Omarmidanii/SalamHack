@@ -10,7 +10,6 @@ import {
   StepStatus,
   StepTitle,
   Text,
-  useSteps,
 } from "@chakra-ui/react";
 const steps = [
   {
@@ -25,7 +24,7 @@ const steps = [
     title: "Azem Palace:",
     description: " A stunning example of Ottoman architecture, now a museum",
   },
-  
+
   {
     title: "Via Recta:",
     description: " A historic street mentioned in the Bible",
@@ -34,9 +33,8 @@ const steps = [
     title: "Beit Al Mamlouka:",
     description: " A boutique hotel in the heart of the Old City",
   },
-]
+];
 const StepperBox = () => {
-  
   return (
     <Stepper
       index={-1}
@@ -49,6 +47,7 @@ const StepperBox = () => {
       {steps.map((step, index) => (
         <Step key={index}>
           <StepIndicator
+            mt={-2}
             fontWeight={"bold"}
             borderColor={"#EAB875"}
             color={"#7BC5C1"}
@@ -60,11 +59,13 @@ const StepperBox = () => {
             />
           </StepIndicator>
 
-          <Box flexShrink="0">
+          <Box flexShrink="0" mt={-2}>
             <StepTitle>
-              <Text fontWeight={'bold'}>{step.title}</Text>
+              <Text fontWeight={"bold"}>{step.title}</Text>
             </StepTitle>
-            <StepDescription><Text fontSize={12}>{step.description} </Text></StepDescription>
+            <StepDescription>
+              <Text fontSize={12}>{step.description} </Text>
+            </StepDescription>
           </Box>
 
           <StepSeparator />
