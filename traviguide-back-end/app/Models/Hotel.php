@@ -28,4 +28,8 @@ class Hotel extends Model
         'contacts' => 'array',
         'location' => 'array',
     ];
+    public function categories()
+    {
+        return $this->morphToMany(Category::class, 'categorizable');
+    }
 }

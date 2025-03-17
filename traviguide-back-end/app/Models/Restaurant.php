@@ -27,4 +27,8 @@ class Restaurant extends Model
         'food_types' => 'array',
         'contacts' => 'array',
     ];
+    public function categories()
+    {
+        return $this->morphToMany(Category::class, 'categorizable');
+    }
 }

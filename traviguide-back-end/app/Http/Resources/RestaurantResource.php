@@ -26,6 +26,9 @@ class RestaurantResource extends JsonResource
             'open_time' => $this->open_time,
             'close_time' => $this->close_time,
             'contacts' => json_encode($this->contacts),
+            'categories' => $this->whenLoaded('categories', function () {
+                return CategoryResource::collection($this->categories);
+            }),
         ];
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\EntertainmentPlaceController;
 use App\Http\Controllers\API\HotelController;
 use App\Http\Controllers\API\RestaurantController;
 use App\Http\Controllers\Auth\AuthController;
@@ -21,4 +23,6 @@ Route::get('/user', function (Request $request) {
 Route::apiResources([
     'restaurants' => RestaurantController::class,
     'hotels' => HotelController::class,
+    'entertainmentplaces' => EntertainmentPlaceController::class,
+    'categories' => CategoryController::class,
 ]);

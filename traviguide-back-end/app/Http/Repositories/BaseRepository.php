@@ -42,14 +42,33 @@ class BaseRepository implements BaseRepositoryInterface
 
     public function store(array $data)
     {
-        return $this->model::create($data);
+        $categories = $data['categories'] ?? [];
+        unset($data['categories']);
+
+        $model = $this->model::create($data);
+
+        if (method_exists($model, 'categories') && !empty($categories)) {
+            $model->categories()->sync($categories);
+        }
+
+        return $model;
     }
 
     public function update($id, array $data)
     {
         $record = $this->model::find($id);
         if ($record == null) throw new Exception('No such Record', 404);
+
+
+        $categories = $data['categories'] ?? [];
+        unset($data['categories']);
+
         $record->update($data);
+
+        if (method_exists($record, 'categories') && !empty($categories)) {
+            $record->categories()->sync($categories);
+        }
+
         return $record;
     }
 
