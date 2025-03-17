@@ -1,5 +1,17 @@
-import { Box, HStack, Input, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Icon,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+  Stack,
+} from "@chakra-ui/react";
 import StepperBox from "./StepperBox";
+import p1 from "../../assets/1.jpg";
+import { IoHappyOutline, IoSend } from "react-icons/io5";
+
 const chat = [
   "hi",
   "Hello! How can I assist you today? 😊",
@@ -20,6 +32,8 @@ const ChatBox = () => {
         w={850}
       >
         <Box
+          bgImg={p1}
+          bgSize={"cover"}
           pb={5}
           mb={-2}
           overflowY={"scroll"}
@@ -27,13 +41,15 @@ const ChatBox = () => {
         >
           {chat.map((v, ind) => (
             <Box
+              backdropFilter={"blur(4.5px)"}
+              boxShadow={`5px 12px 10px -10px gray`}
               borderBottomLeftRadius={ind % 2 == 0 ? 20 : 0}
               borderBottomRightRadius={ind % 2 == 0 ? 0 : 20}
               mx={3}
               my={3}
               placeSelf={ind % 2 == 0 ? "end" : "start"}
               borderTopRadius={20}
-              bgColor={"gray.100"}
+              bgColor={"rgba(123,197,193, 0.55)"}
               p={3}
               w={"fit-content"}
               maxW={500}
@@ -43,21 +59,42 @@ const ChatBox = () => {
           ))}
         </Box>
 
-        <Input
-          borderBottomRadius={20}
-          borderColor={"gray.200"}
-          borderTopRadius={0}
-          h={14}
-          placeholder="plan myschedule for a 5-day trip to tokyo"
-          textColor={"black"}
-          w={850}
-          bgColor={"gray.200"}
-        />
+        <InputGroup>
+          <Input
+            borderBottomRadius={20}
+            borderColor={"#D3E3E2"}
+            borderTopRadius={0}
+            h={12}
+            placeholder="plan myschedule for a 5-day trip to tokyo"
+            textColor={"black"}
+            w={850}
+            bgColor={"#D3E3E2"}
+          />
+          <InputRightElement>
+            <Icon
+              as={IoSend}
+              cursor={"pointer"}
+              boxSize={5}
+              mt={2}
+              color={"#59A3A0"}
+            />
+          </InputRightElement>
+          <InputLeftElement>
+            <Icon
+              mb={-1}
+              as={IoHappyOutline}
+              cursor={"pointer"}
+              boxSize={5}
+              mt={2}
+              color={"#59A3A0"}
+            />
+          </InputLeftElement>
+        </InputGroup>
       </Stack>
 
       <Box
         boxShadow={`0 10px 20px -2px gray`}
-        bgColor={"gray.100"}
+        bgColor={"#EEEEEE"}
         borderRadius={20}
         boxSize={450}
         h={580}
