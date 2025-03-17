@@ -23,8 +23,7 @@ class UpdateRestaurantRequest extends FormRequest
     {
         return [
             'name' => 'sometimes|string|max:255',
-            'latitude' => 'sometimes|numeric|between:-90,90',
-            'longitude' => 'sometimes|numeric|between:-180,180',
+            'location' => 'string',
             'address' => 'sometimes|string|max:255',
             'price_range' => 'sometimes|in:low,medium,high',
             'food_types' => 'sometimes|array',

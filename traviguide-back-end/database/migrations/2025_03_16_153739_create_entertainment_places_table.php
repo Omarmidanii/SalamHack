@@ -13,16 +13,15 @@ return new class extends Migration
     {
         Schema::create('entertainment_places', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->double('latitude')->nullable();
-            $table->double('longitude')->nullable();
-            $table->text('address');
-            $table->enum('price_range', ['low', 'medium', 'high']);
+            $table->string('name')->nullable();
+            $table->string('location')->nullable();
+            $table->text('address')->nullable();
+            $table->enum('price_range', ['low', 'medium', 'high'])->nullable();
             $table->decimal('rating', 3, 2)->nullable();
-            $table->string('type_of_activity');
-            $table->time('open_time');
-            $table->time('close_time');
-            $table->json('contacts');
+            $table->string('type_of_activity')->nullable();
+            $table->time('open_time')->nullable();
+            $table->time('close_time')->nullable();
+            $table->json('contacts')->nullable();
             $table->timestamps();
         });
     }

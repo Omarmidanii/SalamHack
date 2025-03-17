@@ -23,8 +23,7 @@ class StoreRestaurantRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'latitude' => 'numeric|between:-90,90',
-            'longitude' => 'numeric|between:-180,180',
+            'location' => 'required|string',
             'address' => 'required|string|max:255',
             'price_range' => 'required|in:low,medium,high',
             'food_types' => 'required|array',

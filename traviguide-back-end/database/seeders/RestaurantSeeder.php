@@ -14,8 +14,10 @@ class RestaurantSeeder extends Seeder
      */
     public function run(): void
     {
+        Restaurant::factory()->count(10)->create();
         Restaurant::create([
             'name' => 'Example Restaurant',
+            "location" => "somewhere",
             'address' => 'Damascus, Syria',
             'price_range' => 'medium',
             'food_types' => (['Syrian', 'Mediterranean']),
