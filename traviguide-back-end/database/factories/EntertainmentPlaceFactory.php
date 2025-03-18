@@ -14,6 +14,7 @@ class EntertainmentPlaceFactory extends Factory
         return [
             'name' => $this->faker->company, // Fake company name
             'location' => $this->faker->address, // Fake address
+            'description' => $this->faker->text,
             'address' => $this->faker->streetAddress, // Fake street address
             'price_range' => $this->faker->randomElement(['low', 'medium', 'high']), // Random price range
             'rating' => $this->faker->randomFloat(1, 1, 5), // Random rating between 1 and 5

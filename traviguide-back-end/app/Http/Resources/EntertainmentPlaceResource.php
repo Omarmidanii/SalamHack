@@ -12,6 +12,7 @@ class EntertainmentPlaceResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'location' => $this->location,
+            'description' => $this->description,
             'address' => $this->address,
             'price_range' => $this->price_range,
             'rating' => $this->rating,

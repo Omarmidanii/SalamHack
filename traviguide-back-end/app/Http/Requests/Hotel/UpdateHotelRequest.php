@@ -20,6 +20,7 @@ class UpdateHotelRequest extends FormRequest
             'name' => 'sometimes|string|max:255',
             'location' => 'string',
             'address' => 'sometimes|string|max:255',
+            'description' => 'string',
             'price_range' => 'sometimes|in:low,medium,high',
             'rating' => 'nullable|numeric|between:0,5',
             'has_activity' => 'sometimes|boolean',

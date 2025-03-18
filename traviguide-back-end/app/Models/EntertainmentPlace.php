@@ -10,6 +10,7 @@ class EntertainmentPlace extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'description',
         'location',
         'address',
         'price_range',
@@ -20,7 +21,7 @@ class EntertainmentPlace extends Model
         'contacts'
     ];
     protected $casts = [
-        'contacts' => 'array', 
+        'contacts' => 'array',
     ];
 
     public function categories()

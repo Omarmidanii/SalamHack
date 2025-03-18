@@ -13,6 +13,7 @@ class HotelResource extends JsonResource
             'name' => $this->name,
             'location' => $this->location,
             'address' => $this->address,
+            'description' => $this->description,
             'price_range' => $this->price_range,
             'rating' => $this->rating,
             'has_activity' => $this->has_activity,

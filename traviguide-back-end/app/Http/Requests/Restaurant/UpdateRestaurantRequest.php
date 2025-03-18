@@ -25,6 +25,7 @@ class UpdateRestaurantRequest extends FormRequest
             'name' => 'sometimes|string|max:255',
             'location' => 'sometimes|string',
             'address' => 'sometimes|string|max:255',
+            'description' => 'string',
             'price_range' => 'sometimes|in:low,medium,high',
             'food_types' => 'sometimes|array',
             'food_types.*' => 'string|max:255',

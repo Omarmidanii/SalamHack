@@ -19,6 +19,7 @@ class RestaurantResource extends JsonResource
             'location' => $this->location,
             'name' => $this->name,
             'address' => $this->address,
+            'description' => $this->description,
             'price_range' => $this->price_range,
             'food_types' => json_encode($this->food_types),
             'character' => $this->character,

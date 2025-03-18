@@ -16,6 +16,7 @@ class UpdateEntertainmentPlaceRequest extends FormRequest
         return [
             'name' => 'sometimes|string|max:255',
             'location' => 'sometimes|string|max:255',
+            'description' => 'string',
             'address' => 'sometimes|string|max:255',
             'price_range' => 'sometimes|in:low,medium,high',
             'rating' => 'nullable|numeric|between:1,5',

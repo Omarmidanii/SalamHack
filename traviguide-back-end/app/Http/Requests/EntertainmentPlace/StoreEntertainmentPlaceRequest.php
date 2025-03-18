@@ -17,6 +17,7 @@ class StoreEntertainmentPlaceRequest extends FormRequest
             'name' => 'string|max:255',
             'location' => 'string|max:255',
             'address' => 'string|max:255',
+            'description' => 'string',
             'price_range' => 'in:low,medium,high',
             'rating' => 'nullable|numeric|between:1,5',
             'type_of_activity' => 'string|max:255',

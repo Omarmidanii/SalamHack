@@ -15,6 +15,7 @@ class RestaurantFactory extends Factory
             'name' => $this->faker->company, // Generate a fake company name
             'location' => $this->faker->address, // Generate a fake address
             'address' => $this->faker->streetAddress, // Generate a fake street address
+            'description' => $this->faker->text,
             'price_range' => $this->faker->randomElement(['low', 'medium', 'high']), // Random price range
             'food_types' => json_encode($this->faker->randomElements(['Syrian', 'Mediterranean', 'Italian', 'Mexican', 'Japanese'], $this->faker->numberBetween(1, 3))), // Random food types
             'character' => $this->faker->randomElement(['Traditional', 'Modern', 'Rustic', 'Elegant']), // Random character

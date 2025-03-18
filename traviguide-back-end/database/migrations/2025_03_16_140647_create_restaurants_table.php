@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('location')->nullable();
             $table->text('address')->nullable();
+            $table->text('description')->nullable();
             $table->enum('price_range', ['low', 'medium', 'high'])->nullable();
             $table->json('food_types')->nullable();
             $table->string('character')->nullable();

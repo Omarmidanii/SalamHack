@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('location')->nullable();
+            $table->text('description')->nullable();
             $table->text('address')->nullable();
             $table->enum('price_range', ['low', 'medium', 'high'])->nullable();
             $table->decimal('rating', 3, 2)->nullable();

@@ -18,6 +18,7 @@ class StoreHotelRequest extends FormRequest
             'name' => 'string|max:255',
             'location' => 'string',
             'address' => 'string|max:255',
+            'description' => 'string',
             'price_range' => 'in:low,medium,high',
             'rating' => 'nullable|numeric|between:0,5',
             'has_activity' => 'boolean',

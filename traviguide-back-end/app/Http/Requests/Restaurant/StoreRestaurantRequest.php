@@ -25,6 +25,7 @@ class StoreRestaurantRequest extends FormRequest
             'name' => 'string|max:255',
             'location' => 'string',
             'address' => 'string|max:255',
+            'description' => 'string',
             'price_range' => 'in:low,medium,high',
             'food_types' => 'array',
             'food_types.*' => 'string|max:255',
