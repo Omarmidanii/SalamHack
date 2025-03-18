@@ -15,18 +15,20 @@ class StoreHotelRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'location' => 'required|string',
-            'address' => 'required|string|max:255',
-            'price_range' => 'required|in:low,medium,high',
+            'name' => 'string|max:255',
+            'location' => 'string',
+            'address' => 'string|max:255',
+            'price_range' => 'in:low,medium,high',
             'rating' => 'nullable|numeric|between:0,5',
-            'has_activity' => 'required|boolean',
-            'room_sizes' => 'required|array',
+            'has_activity' => 'boolean',
+            'room_sizes' => 'array',
             'room_sizes.*' => 'string|max:255',
-            'available_times' => 'required|array',
+            'available_times' => 'array',
             'available_times.*' => 'string|max:255',
-            'contacts' => 'required|array',
+            'contacts' => 'array',
             'contacts.*' => 'string|max:255',
+            'categories' => 'array',
+            'categories.*' => "exists:categories,id",
         ];
     }
 }

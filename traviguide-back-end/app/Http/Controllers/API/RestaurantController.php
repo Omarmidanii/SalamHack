@@ -25,7 +25,7 @@ class RestaurantController extends Controller
     public function index()
     {
         try {
-            $data = $this->restaurantRepository->index();
+            $data = $this->restaurantRepository->index(['categories']);
             return $this->SuccessMany($data, RestaurantResource::class, 'Restaurants Indexed Successfully');
         } catch (Throwable $th) {
             return $this->Error($th);
@@ -48,7 +48,7 @@ class RestaurantController extends Controller
     public function show($id)
     {
         try {
-            $data = $this->restaurantRepository->show($id);
+            $data = $this->restaurantRepository->show($id, ['categories']);
             return $this->SuccessOne($data, RestaurantResource::class, 'Restaurant fetched Successfully');
         } catch (Throwable $th) {
             return $this->Error($th);

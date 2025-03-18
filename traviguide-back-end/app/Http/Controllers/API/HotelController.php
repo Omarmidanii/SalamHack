@@ -25,7 +25,7 @@ class HotelController extends Controller
     public function index()
     {
         try {
-            $data = $this->hotelrepository->index();
+            $data = $this->hotelrepository->index(['categories']);
             return $this->SuccessMany($data, HotelResource::class, 'Hotels Indexed Successfully');
         } catch (Throwable $th) {
             return $this->Error($th);
@@ -47,7 +47,7 @@ class HotelController extends Controller
     public function show($id)
     {
         try {
-            $data = $this->hotelrepository->show($id);
+            $data = $this->hotelrepository->show($id, ['categories']);
             return $this->SuccessOne($data, HotelResource::class, 'Hotel fetched Successfully');
         } catch (Throwable $th) {
             return $this->Error($th);

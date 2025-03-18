@@ -29,6 +29,8 @@ class UpdateHotelRequest extends FormRequest
             'available_times.*' => 'string|max:255',
             'contacts' => 'sometimes|array',
             'contacts.*' => 'string|max:255',
+            'categories' => 'sometimes|array',
+            'categories.*' => "exists:categories,id",
         ];
     }
 }

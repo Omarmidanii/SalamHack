@@ -24,6 +24,8 @@ class UpdateEntertainmentPlaceRequest extends FormRequest
             'close_time' => 'sometimes|date_format:H:i:s',
             'contacts' => 'sometimes|array',
             'contacts.*' => 'string|max:255',
+            'categories' => 'sometimes|array',
+            'categories.*' => 'exists:categories,id',
         ];
     }
 }

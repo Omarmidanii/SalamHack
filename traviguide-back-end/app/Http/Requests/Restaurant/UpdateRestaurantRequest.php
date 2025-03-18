@@ -23,7 +23,7 @@ class UpdateRestaurantRequest extends FormRequest
     {
         return [
             'name' => 'sometimes|string|max:255',
-            'location' => 'string',
+            'location' => 'sometimes|string',
             'address' => 'sometimes|string|max:255',
             'price_range' => 'sometimes|in:low,medium,high',
             'food_types' => 'sometimes|array',
@@ -34,6 +34,8 @@ class UpdateRestaurantRequest extends FormRequest
             'close_time' => 'sometimes|date_format:H:i:s',
             'contacts' => 'sometimes|array',
             'contacts.*' => 'string|max:255',
+            'categories' => 'sometimes|array',
+            'categories.*' => "exists:categories,id",
         ];
     }
 }

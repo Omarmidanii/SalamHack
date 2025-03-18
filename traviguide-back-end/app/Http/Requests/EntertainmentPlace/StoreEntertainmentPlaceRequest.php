@@ -14,16 +14,18 @@ class StoreEntertainmentPlaceRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            'price_range' => 'required|in:low,medium,high',
+            'name' => 'string|max:255',
+            'location' => 'string|max:255',
+            'address' => 'string|max:255',
+            'price_range' => 'in:low,medium,high',
             'rating' => 'nullable|numeric|between:1,5',
-            'type_of_activity' => 'required|string|max:255',
-            'open_time' => 'required|date_format:H:i:s',
-            'close_time' => 'required|date_format:H:i:s',
-            'contacts' => 'required|array',
+            'type_of_activity' => 'string|max:255',
+            'open_time' => 'date_format:H:i:s',
+            'close_time' => 'date_format:H:i:s',
+            'contacts' => 'array',
             'contacts.*' => 'string|max:255',
+            'categories' => 'array',
+            'categories.*' => 'exists:categories,id',
         ];
     }
 }
