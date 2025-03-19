@@ -2,8 +2,10 @@ import { Button, HStack, Icon, Stack, Text } from "@chakra-ui/react";
 import plane from "../../assets/Landing/Picsart_25-03-17_20-30-03-802.png";
 import ImagesGrid from "./ImagesGrid";
 import { FaArrowRight } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const DiscoverWonders = () => {
+  const navigate = useNavigate();
   return (
     <HStack
       justifyContent={"space-evenly"}
@@ -35,6 +37,7 @@ const DiscoverWonders = () => {
           borderRadius={50}
           textColor={"white"}
           bgColor={"#6AB4B0"}
+          onClick={() => navigate("/places")}
         >
           discover more{" "}
           <Icon
