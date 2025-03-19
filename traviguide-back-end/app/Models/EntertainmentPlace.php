@@ -28,4 +28,9 @@ class EntertainmentPlace extends Model
     {
         return $this->morphToMany(Category::class, 'categorizable');
     }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
 }

@@ -37,6 +37,10 @@ class UpdateRestaurantRequest extends FormRequest
             'contacts.*' => 'string|max:255',
             'categories' => 'sometimes|array',
             'categories.*' => "exists:categories,id",
+            'images' => 'sometimes|array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'images_to_delete' => 'sometimes|array',
+            'images_to_delete.*' => 'exists:images,id',
         ];
     }
 }

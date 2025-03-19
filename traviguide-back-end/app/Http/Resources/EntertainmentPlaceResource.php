@@ -23,6 +23,7 @@ class EntertainmentPlaceResource extends JsonResource
             'categories' => $this->whenLoaded('categories', function () {
                 return CategoryResource::collection($this->categories);
             }),
+            'images' => ImageResource::collection($this->whenLoaded('images')),
         ];
     }
 }
