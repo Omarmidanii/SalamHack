@@ -1,10 +1,6 @@
 import { Box, HStack, SimpleGrid, Stack, Text } from "@chakra-ui/react";
-import resizeWindow from "../../services/resizeWindow";
 import PlaceCard from "../Landing/PlaceCard";
 import PlacesFilter from "./PlacesFilter";
-import landingShow from "../../assets/Landing/landingShow.png";
-import landingShow2 from "../../assets/Landing/landingShow2.jpeg";
-import landingShow1 from "../../assets/Landing/landingShow1.jpeg";
 import landingShow3 from "../../assets/Landing/landingShow3.jpeg";
 import useFetchHotels from "../../hooks/useFetchHotels";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -14,7 +10,7 @@ import React from "react";
 
 const PlacesGrid = () => {
   const currentPathname = window.location.pathname;
-  const { data, fetchNextPage, hasNextPage, refetch } =
+  const { data, fetchNextPage, hasNextPage } =
     currentPathname.substring(8) == "hotels"
       ? useFetchHotels()
       : currentPathname.substring(8) == "restaurants"
@@ -84,9 +80,13 @@ const PlacesGrid = () => {
                   }}
                 >
                   <PlaceCard
+                    type={currentPathname.substring(8)}
+                    id={info.id}
                     name={info.name}
-                    location={info.location}
-                    image={landingShow1}
+                    location={info.address}
+                    image={
+                      info.images.length > 0 ? info.images[0].url : landingShow3
+                    }
                   />
                 </Box>
               ))}

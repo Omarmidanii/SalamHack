@@ -16,7 +16,7 @@ const Addimages = () => {
   const onSubmit = () => {
     localStorage.setItem(
       "token",
-      "1|50czfnZHCMdVG5kQSMWiRWyaxZAFauwA631bVAv18b37935d"
+      "1|RiWybZHeTTWmFCgpU8boAo6FggVDNUJ0NP6U5zrY86b38756"
     );
     const data = new FormData();
     if (image) {
