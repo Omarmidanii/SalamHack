@@ -1,0 +1,90 @@
+[
+    {
+        "name": "فندق فورسيزونز دمشق",
+        "location": "https://maps.app.goo.gl/eCC29ri1YuwtLFB66",
+        "address": "ساحة الأمويين، دمشق، سوريا",
+        "price_range": "high",
+        "rating": "4.8",
+        "has_activity": "1",
+        "room_sizes": "غرف فاخرة",
+        "available_times": "متاحة على مدار الساعة",
+        "contacts": "+963 11 339 1000"
+    },
+    {
+        "name": "فندق الشام",
+        "location": "https://maps.app.goo.gl/R6rzDMUJVoyXCh3WA",
+        "address": "3 ميسلون، دمشق، سوريا",
+        "price_range": "high",
+        "rating": "4.6",
+        "has_activity": "1",
+        "room_sizes": "غرف واسعة",
+        "available_times": "متاحة على مدار الساعة",
+        "contacts": "112232300"
+    },
+    {
+        "name": "فندق بيت الوالي",
+        "location": "https://maps.app.goo.gl/znHgziGVNSxS5bWc9",
+        "address": "باب توما، دمشق، سوريا",
+        "price_range": "medium",
+        "rating": "4.7",
+        "has_activity": "0",
+        "room_sizes": "غرف تقليدية",
+        "available_times": "متاحة على مدار الساعة",
+        "contacts": "115436666"
+    },
+    {
+        "name": "فندق القيصر",
+        "location": "https://maps.app.goo.gl/WijeM7Jyfh6g6NQV7",
+        "address": "3 ميسلون، دمشق، سوريا",
+        "price_range": "medium",
+        "rating": "4.5",
+        "has_activity": "1",
+        "room_sizes": "غرف متوسطة الحجم",
+        "available_times": "متاحة على مدار الساعة",
+        "contacts": "112334000"
+    },
+    {
+        "name": "فندق قصر الضيافة",
+        "location": "https://maps.app.goo.gl/XbZqJ2mPzYzQoTqVA",
+        "address": "دمشق القديمة، سوريا",
+        "price_range": "low",
+        "rating": "4.3",
+        "has_activity": "0",
+        "room_sizes": "غرف صغيرة",
+        "available_times": "متاحة على مدار الساعة",
+        "contacts": "113567890"
+    },
+    {
+        "name": "فندق البيت الشامي",
+        "location": "https://maps.app.goo.gl/LmHGxFv2rWTd3g7S6",
+        "address": "باب شرقي، دمشق، سوريا",
+        "price_range": "medium",
+        "rating": "4.4",
+        "has_activity": "0",
+        "room_sizes": "غرف متوسطة الحجم",
+        "available_times": "متاحة على مدار الساعة",
+        "contacts": "114678901"
+    },
+    {
+        "name": "فندق زنوبيا",
+        "location": "https://maps.app.goo.gl/H8bK3mNp5kLQoC8A8",
+        "address": "ساحة المرجة، دمشق، سوريا",
+        "price_range": "low",
+        "rating": "4.1",
+        "has_activity": "0",
+        "room_sizes": "غرف اقتصادية",
+        "available_times": "متاحة على مدار الساعة",
+        "contacts": "115789012"
+    },
+    {
+        "name": "فندق الكارلتون",
+        "location": "https://maps.app.goo.gl/TqB7Wbq5oL8ZgF5X8",
+        "address": "شارع الفردوس، دمشق، سوريا",
+        "price_range": "high",
+        "rating": "4.9",
+        "has_activity": "1",
+        "room_sizes": "أجنحة فاخرة",
+        "available_times": "متاحة على مدار الساعة",
+        "contacts": "116890123"
+    }
+]

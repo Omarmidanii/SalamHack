@@ -7,6 +7,7 @@ use App\Http\Interfaces\RestaurantRepositoryInterface;
 use App\Http\Requests\Restaurant\StoreRestaurantRequest;
 use App\Http\Requests\Restaurant\UpdateRestaurantRequest;
 use App\Http\Resources\RestaurantResource;
+use App\Models\Restaurant;
 use App\Trait\ApiResponse;
 use Throwable;
 
@@ -25,7 +26,7 @@ class RestaurantController extends Controller
     public function index()
     {
         try {
-            $data = $this->restaurantRepository->index(['categories']);
+            $data = $this->restaurantRepository->index(['categories', 'images']);
             return $this->SuccessMany($data, RestaurantResource::class, 'Restaurants Indexed Successfully');
         } catch (Throwable $th) {
             return $this->Error($th);
@@ -48,7 +49,7 @@ class RestaurantController extends Controller
     public function show($id)
     {
         try {
-            $data = $this->restaurantRepository->show($id, ['categories']);
+            $data = $this->restaurantRepository->show($id, ['categories', 'images']);
             return $this->SuccessOne($data, RestaurantResource::class, 'Restaurant fetched Successfully');
         } catch (Throwable $th) {
             return $this->Error($th);

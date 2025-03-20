@@ -26,7 +26,7 @@ class EntertainmentPlaceController extends Controller
     public function index()
     {
         try {
-            $data = $this->entertainmentPlacerepository->index(['categories']);
+            $data = $this->entertainmentPlacerepository->index(['categories', 'images']);
             return $this->SuccessMany($data, EntertainmentPlaceResource::class, 'entertainmentplaces Indexed Successfully');
         } catch (Throwable $th) {
             return $this->Error($th);
@@ -48,7 +48,7 @@ class EntertainmentPlaceController extends Controller
     public function show($id)
     {
         try {
-            $data = $this->entertainmentPlacerepository->show($id , ['categories']);
+            $data = $this->entertainmentPlacerepository->show($id, ['categories', 'images']);
             return $this->SuccessOne($data, EntertainmentPlaceResource::class, 'entertainmentplace fetched Successfully');
         } catch (Throwable $th) {
             return $this->Error($th);
