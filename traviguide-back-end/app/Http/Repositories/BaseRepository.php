@@ -3,10 +3,9 @@
 namespace App\Http\Repositories;
 
 use App\Http\Interfaces\BaseRepositoryInterface;
-use App\Http\Services\Filter\FilterService;
-use App\Http\Services\OrderService;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class BaseRepository implements BaseRepositoryInterface
 {
@@ -43,33 +42,62 @@ class BaseRepository implements BaseRepositoryInterface
     public function store(array $data)
     {
         $categories = $data['categories'] ?? [];
-        unset($data['categories']);
+        $images = $data['images'] ?? [];
+        unset($data['categories'], $data['images']);
 
         $model = $this->model::create($data);
 
-        if (method_exists($model, 'categories') && !empty($categories)) {
+        if (method_exists($model, 'categories')) {
             $model->categories()->sync($categories);
         }
 
-        return $model;
+        if (method_exists($model, 'images')) {
+            return $images;
+            foreach ($images as $image) {
+                $path = $image->store('public/images');
+                $model->images()->create([
+                    'url' => Storage::url($path)
+                ]);
+            }
+        }
+
+        return $model->load('images');
     }
 
     public function update($id, array $data)
     {
-        $record = $this->model::find($id);
-        if ($record == null) throw new Exception('No such Record', 404);
-
+        $record = $this->model::findOrFail($id);
 
         $categories = $data['categories'] ?? [];
-        unset($data['categories']);
+        $images = $data['images'] ?? [];
+        $imagesToDelete = $data['images_to_delete'] ?? [];
+        unset($data['categories'], $data['images'], $data['images_to_delete']);
 
         $record->update($data);
 
-        if (method_exists($record, 'categories') && !empty($categories)) {
+        if (method_exists($record, 'categories')) {
             $record->categories()->sync($categories);
         }
 
-        return $record;
+        if (method_exists($record, 'images') && !empty($imagesToDelete)) {
+            $images = $record->images()->whereIn('id', $imagesToDelete)->get();
+            foreach ($images as $image) {
+                Storage::delete(str_replace('/storage', 'public', $image->url)); // Delete file
+                $image->delete();
+            }
+        }
+
+
+        if (method_exists($record, 'images') && !empty($images)) {
+            foreach ($images as $image) {
+                $path = $image->store('public/images');
+                $record->images()->create([
+                    'url' => Storage::url($path)
+                ]);
+            }
+        }
+
+        return $record->load('images');
     }
 
     public function destroy($id)

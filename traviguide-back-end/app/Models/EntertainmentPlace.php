@@ -20,12 +20,17 @@ class EntertainmentPlace extends Model
         'close_time',
         'contacts'
     ];
-    protected $casts = [
-        'contacts' => 'array',
-    ];
+//    protected $casts = [
+//        'contacts' => 'array',
+//    ];
 
     public function categories()
     {
         return $this->morphToMany(Category::class, 'categorizable');
+    }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
     }
 }

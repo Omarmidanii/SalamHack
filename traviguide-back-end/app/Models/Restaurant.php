@@ -24,12 +24,17 @@ class Restaurant extends Model
         'contacts',
     ];
 
-    protected $casts = [
-        'food_types' => 'array',
-        'contacts' => 'array',
-    ];
+//    protected $casts = [
+//        'food_types' => 'array',
+//        'contacts' => 'array',
+//    ];
     public function categories()
     {
         return $this->morphToMany(Category::class, 'categorizable');
+    }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
     }
 }

@@ -27,16 +27,16 @@ class StoreRestaurantRequest extends FormRequest
             'address' => 'string|max:255',
             'description' => 'string',
             'price_range' => 'in:low,medium,high',
-            'food_types' => 'array',
-            'food_types.*' => 'string|max:255',
+            'food_types' => 'string|max:255',
             'character' => 'string|max:255',
             'rating' => 'nullable|numeric|between:0,5',
             'open_time' => 'date_format:H:i:s',
             'close_time' => 'date_format:H:i:s',
-            'contacts' => 'array',
-            'contacts.*' => 'string|max:255',
-            'categories' => 'array',
+            'contacts' => 'string|max:255',
+            'categories' => 'string',
             'categories.*' => "exists:categories,id",
+            'images' => 'sometimes|array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
     }
 }

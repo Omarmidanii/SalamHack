@@ -23,10 +23,13 @@ class UpdateEntertainmentPlaceRequest extends FormRequest
             'type_of_activity' => 'sometimes|string|max:255',
             'open_time' => 'sometimes|date_format:H:i:s',
             'close_time' => 'sometimes|date_format:H:i:s',
-            'contacts' => 'sometimes|array',
-            'contacts.*' => 'string|max:255',
+            'contacts' => 'string|max:255',
             'categories' => 'sometimes|array',
             'categories.*' => 'exists:categories,id',
+            'images' => 'sometimes|array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'images_to_delete' => 'sometimes|array',
+            'images_to_delete.*' => 'exists:images,id',
         ];
     }
 }

@@ -3,9 +3,12 @@
 namespace Database\Seeders;
 
 use App\Models\Restaurant;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 use Illuminate\Support\Facades\DB;
+
 
 class RestaurantSeeder extends Seeder
 {
@@ -14,18 +17,26 @@ class RestaurantSeeder extends Seeder
      */
     public function run(): void
     {
-        Restaurant::factory()->count(10)->create();
-        Restaurant::create([
-            'name' => 'Example Restaurant',
-            "location" => "somewhere",
-            'address' => 'Damascus, Syria',
-            'price_range' => 'medium',
-            'food_types' => (['Syrian', 'Mediterranean']),
-            'character' => 'Traditional',
-            'rating' => 4.5,
-            'open_time' => '08:00:00',
-            'close_time' => '22:00:00',
-            'contacts' => (['+963 11 1234567', 'info@example.com']),
-        ]);
+        $json = File::get(database_path('seeders/data/restaurants.json'));
+
+        $data = json_decode($json, true);
+
+        if (is_array($data)) {
+            foreach ($data as $restaurant) {
+                DB::table('restaurants')->insert([
+                    'name' => $restaurant['name'],
+                    'location' => $restaurant['location'],
+                    'address' => $restaurant['address'],
+                    'description' => $restaurant['description'],
+                    'price_range' => $restaurant['price_range'],
+                    'food_types' => $restaurant['food_types'],
+                    'character' => $restaurant['character'],
+                    'rating' => $restaurant['rating'],
+                    'open_time' => $restaurant['open_time'],
+                    'close_time' => $restaurant['close_time'],
+                    'contacts' => $restaurant['contacts'],
+                ]);
+            }
+        }
     }
 }

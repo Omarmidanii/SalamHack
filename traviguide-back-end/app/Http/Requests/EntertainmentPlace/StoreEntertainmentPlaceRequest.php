@@ -23,10 +23,11 @@ class StoreEntertainmentPlaceRequest extends FormRequest
             'type_of_activity' => 'string|max:255',
             'open_time' => 'date_format:H:i:s',
             'close_time' => 'date_format:H:i:s',
-            'contacts' => 'array',
-            'contacts.*' => 'string|max:255',
+            'contacts' => 'string|max:255',
             'categories' => 'array',
             'categories.*' => 'exists:categories,id',
+            'images' => 'sometimes|array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
     }
 }
