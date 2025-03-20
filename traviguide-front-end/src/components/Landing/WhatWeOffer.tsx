@@ -8,7 +8,10 @@ const WhatWeOffer = () => {
     <Stack mt={80} mb={52}>
       <Text fontSize={32} mb={32} placeSelf={"center"}>
         {" "}
-        what we offer in <text style={{color:"#6AB4B0", fontWeight:'bold'}}>TRAVIGAIDE?</text>
+        what we offer in{" "}
+        <text style={{ color: "#6AB4B0", fontWeight: "bold" }}>
+          TRAVIGAIDE?
+        </text>
       </Text>
       <HStack justifyContent={"space-evenly"}>
         <Stack>
@@ -18,7 +21,12 @@ const WhatWeOffer = () => {
             color={"#EAB875"}
             boxSize={20}
           />
-          <Text textAlign={"center"} fontWeight={"bold"} fontSize={24} color={"#333333"} >
+          <Text
+            textAlign={"center"}
+            fontWeight={"bold"}
+            fontSize={24}
+            color={"#333333"}
+          >
             Card with Divider
           </Text>
           <Text textAlign={"center"} textColor={"gray.600"} w={300}>
@@ -33,7 +41,12 @@ const WhatWeOffer = () => {
             color={"#EAB875"}
             boxSize={20}
           />
-          <Text textAlign={"center"} fontWeight={"bold"} fontSize={24} color={"#333333"}>
+          <Text
+            textAlign={"center"}
+            fontWeight={"bold"}
+            fontSize={24}
+            color={"#333333"}
+          >
             Card with Divider
           </Text>
           <Text textAlign={"center"} textColor={"gray.600"} w={300}>
@@ -48,7 +61,12 @@ const WhatWeOffer = () => {
             color={"#EAB875"}
             boxSize={20}
           />
-          <Text textAlign={"center"} fontWeight={"bold"} fontSize={24} color={"#333333"}>
+          <Text
+            textAlign={"center"}
+            fontWeight={"bold"}
+            fontSize={24}
+            color={"#333333"}
+          >
             Card with Divider
           </Text>
           <Text textAlign={"center"} textColor={"gray.600"} w={300}>

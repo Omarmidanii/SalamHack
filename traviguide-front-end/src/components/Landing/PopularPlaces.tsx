@@ -21,10 +21,10 @@ const PopularPlaces = () => {
         below is how you can implement the slideshow using
       </Text>
       <HStack spacing={10} mt={10} ml={-2}>
-        <PlaceCard image={rome} />
-        <PlaceCard image={rome} />
-        <PlaceCard image={rome} />
-        <PlaceCard image={rome} />
+        <PlaceCard name="Old Building" location="Rome, Italy" image={rome} />
+        <PlaceCard name="Old Building" location="Rome, Italy" image={rome} />
+        <PlaceCard name="Old Building" location="Rome, Italy" image={rome} />
+        <PlaceCard name="Old Building" location="Rome, Italy" image={rome} />
       </HStack>
     </Box>
   );
