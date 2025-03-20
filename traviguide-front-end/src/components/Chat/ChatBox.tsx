@@ -9,7 +9,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import StepperBox from "./StepperBox";
-import p1 from "../../assets/1.jpg";
+import p1 from "../../assets/photo_2025-03-20_23-33-06.jpg";
 import { IoHappyOutline, IoSend } from "react-icons/io5";
 
 const chat = [
