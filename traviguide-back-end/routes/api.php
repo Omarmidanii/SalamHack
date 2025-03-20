@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\ChatController;
 use App\Http\Controllers\API\EntertainmentPlaceController;
 use App\Http\Controllers\API\HotelController;
 use App\Http\Controllers\API\RestaurantController;
@@ -26,3 +27,4 @@ Route::apiResources([
     'entertainmentplaces' => EntertainmentPlaceController::class,
     'categories' => CategoryController::class,
 ]);
+Route::post('/travel-plan-chat', [ChatController::class, 'getTravelPlan']);
