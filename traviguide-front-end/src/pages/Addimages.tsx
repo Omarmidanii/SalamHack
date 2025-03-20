@@ -20,7 +20,7 @@ const Addimages = () => {
     );
     const data = new FormData();
     if (image) {
-      data.append(`images`, image);
+      data.append(`images[]`, image);
       update.mutate(data);
     }
   };
