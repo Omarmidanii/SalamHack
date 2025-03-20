@@ -4,24 +4,33 @@ namespace Database\Seeders;
 
 use App\Models\EntertainmentPlace;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class EntertainmentPlaceSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
+        $json = File::get(database_path('seeders/data/entertainment.json'));
+        $data = json_decode($json, true);
 
-        EntertainmentPlace::factory()->count(20)->create();
 
-        EntertainmentPlace::create([
-            'name' => 'Example Cinema',
-            'location' => 'somewhere',
-            'address' => 'Damascus, Syria',
-            'price_range' => 'medium',
-            'rating' => 4.5,
-            'type_of_activity' => 'Cinema',
-            'open_time' => '10:00:00',
-            'close_time' => '22:00:00',
-            'contacts' => json_encode(['+963 11 1234567', 'info@example.com']),
-        ]);
+        if (is_array($data)) {
+            foreach ($data as $entertainment) {
+
+                DB::table('entertainment_places')->insert([
+                    'name' => $entertainment['name'],
+                    'location' => $entertainment['location'],
+                    'address' => $entertainment['address'],
+                    'description' => $entertainment['description'],
+                    'price_range' => $entertainment['price_range'],
+                    'rating' => $entertainment['rating'],
+                    'type_of_activity' => $entertainment['type_of_activity'],
+                    'open_time' => $entertainment['open_time'],
+                    'close_time' => $entertainment['close_time'],
+                    'contacts' => $entertainment['contacts'],
+                ]);
+            }
+        }
     }
 }

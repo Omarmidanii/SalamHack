@@ -17,13 +17,13 @@ return new class extends Migration
             $table->string('location')->nullable();
             $table->text('address')->nullable();
             $table->text('description')->nullable();
-            $table->enum('price_range', ['low', 'medium', 'high'])->nullable();
-            $table->json('food_types')->nullable();
+            $table->string('price_range')->nullable();
+            $table->string('food_types')->nullable();
             $table->string('character')->nullable();
             $table->decimal('rating', 3, 2)->nullable();
-            $table->time('open_time')->nullable();
-            $table->time('close_time')->nullable();
-            $table->json('contacts')->nullable();
+            $table->string('open_time')->nullable();
+            $table->string('close_time')->nullable();
+            $table->string('contacts')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

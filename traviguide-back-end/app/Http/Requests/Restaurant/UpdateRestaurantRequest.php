@@ -27,14 +27,14 @@ class UpdateRestaurantRequest extends FormRequest
             'address' => 'sometimes|string|max:255',
             'description' => 'string',
             'price_range' => 'sometimes|in:low,medium,high',
-            'food_types' => 'sometimes|array',
-            'food_types.*' => 'string|max:255',
+
+            'food_types' => 'string|max:255',
             'character' => 'sometimes|string|max:255',
             'rating' => 'nullable|numeric|between:0,5',
             'open_time' => 'sometimes|date_format:H:i:s',
             'close_time' => 'sometimes|date_format:H:i:s',
-            'contacts' => 'sometimes|array',
-            'contacts.*' => 'string|max:255',
+
+            'contacts' => 'string|max:255',
             'categories' => 'sometimes|array',
             'categories.*' => "exists:categories,id",
             'images' => 'sometimes|array',

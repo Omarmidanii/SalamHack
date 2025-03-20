@@ -21,12 +21,12 @@ class RestaurantResource extends JsonResource
             'address' => $this->address,
             'description' => $this->description,
             'price_range' => $this->price_range,
-            'food_types' => json_encode($this->food_types),
+            'food_types' => $this->food_types,
             'character' => $this->character,
             'rating' => $this->rating,
             'open_time' => $this->open_time,
             'close_time' => $this->close_time,
-            'contacts' => json_encode($this->contacts),
+            'contacts' => $this->contacts,
             'categories' => $this->whenLoaded('categories', function () {
                 return CategoryResource::collection($this->categories);
             }),

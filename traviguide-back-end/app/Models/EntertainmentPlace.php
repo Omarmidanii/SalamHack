@@ -20,9 +20,9 @@ class EntertainmentPlace extends Model
         'close_time',
         'contacts'
     ];
-    protected $casts = [
-        'contacts' => 'array',
-    ];
+//    protected $casts = [
+//        'contacts' => 'array',
+//    ];
 
     public function categories()
     {
