@@ -11,4 +11,6 @@ export default interface hotel {
   available_times: string;
   contacts: string;
   categories: string[];
+  images: { id: number; url: string }[];
+
 }

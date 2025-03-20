@@ -12,4 +12,5 @@ export default interface restaurant {
   close_time: string;
   contacts: string;
   categories: string[];
+  images: { id: number; url: string }[];
 }

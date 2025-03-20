@@ -16,7 +16,11 @@ class ChatController extends Controller
 {
 
     protected $apiUrl = 'https://openrouter.ai/api/v1/chat/completions';
+<<<<<<< HEAD
     protected $apiKey = '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';
+=======
+    protected $apiKey = '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';
+>>>>>>> d212d62075b45821e5f58bf64e985bbbef3c3f65
     public function getTravelPlan(Request $request)
     {
         try {

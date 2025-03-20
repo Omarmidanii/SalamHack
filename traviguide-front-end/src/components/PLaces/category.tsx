@@ -1,4 +1,10 @@
-import { Button, HStack, Icon, Stack, Text } from "@chakra-ui/react";
+import {
+  Button,
+  HStack,
+  Icon,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { LuTentTree } from "react-icons/lu";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { TbBed } from "react-icons/tb";
@@ -15,6 +21,7 @@ const Category = () => {
   const hotels = useFetchHotels();
   const restaurants = useFetchRetaurants();
   const activities = useFetchEntPlaces();
+
   return (
     <Stack mt={80} placeItems={"center"} fontFamily={"initial"}>
       <Text fontSize={40} mb={5}>
@@ -26,9 +33,11 @@ const Category = () => {
           <div>
             {index < 4 && (
               <PlaceCard
-                location={val.location}
+              type="hotels"
+                id={val.id}
+                location={val.address}
                 name={val.name}
-                image={landingShow3}
+                image={val.images.length > 0 ? val.images[0].url : landingShow3}
               />
             )}
           </div>
@@ -62,9 +71,11 @@ const Category = () => {
           <div>
             {index < 4 && (
               <PlaceCard
-                location={val.location}
+              type="restaurants"
+                id={val.id}
+                location={val.address}
                 name={val.name}
-                image={landingShow3}
+                image={val.images.length > 0 ? val.images[0].url : landingShow3}
               />
             )}
           </div>
@@ -97,9 +108,11 @@ const Category = () => {
           <div>
             {index < 4 && (
               <PlaceCard
-                location={val.location}
+              type="entertainmentplaces"
+                id={val.id}
+                location={val.address}
                 name={val.name}
-                image={landingShow3}
+                image={val.images.length > 0 ? val.images[0].url : landingShow3}
               />
             )}
           </div>
@@ -117,7 +130,7 @@ const Category = () => {
         bgColor={"#6AB4B0"}
         fontSize={14}
         fontFamily={"sans-serif"}
-        onClick={() => navigate("/places/activities")}
+        onClick={() => navigate("/places/entertainmentplaces")}
       >
         More Activity Places{" "}
         <Icon as={FaArrowRight} color={"white"} boxSize={3.5} ml={1.5} />

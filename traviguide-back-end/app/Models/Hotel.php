@@ -27,7 +27,6 @@ class Hotel extends Model
         'room_sizes' => 'array',
         'available_times' => 'array',
         'contacts' => 'array',
-        'location' => 'array',
     ];
     public function categories()
     {

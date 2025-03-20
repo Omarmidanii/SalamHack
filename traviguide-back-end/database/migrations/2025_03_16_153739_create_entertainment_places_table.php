@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('entertainment_places', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('location')->nullable();
+            $table->text('location')->nullable();
             $table->text('address')->nullable();
             $table->text('description')->nullable();
             $table->string('price_range')->nullable();
