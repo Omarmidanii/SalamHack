@@ -1,7 +1,7 @@
 [
     {
         "name": "فندق فورسيزونز دمشق",
-        "location": "https://maps.app.goo.gl/eCC29ri1YuwtLFB66",
+        "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.5128498311938!2d36.2913545!3d33.5140494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e6ddd5c7b135%3A0xb4d0bb48ddb7c9cc!2z2YHZiNixINiz2YrYstmI2YY!5e0!3m2!1sar!2s!4v1742499354270!5m2!1sar!2s",
         "address": "ساحة الأمويين، دمشق، سوريا",
         "price_range": "high",
         "description":"فندق فاخر يقع في شارع شكري القوتلي، ويُعتبر من أبرز الفنادق في دمشق. يتميز بإطلالاته الرائعة على نهر بردى والجبال المحيطة، ويوفر خدمات راقية تشمل مطاعم متنوعة، منتجع صحي، ومرافق حديثة.",
@@ -13,7 +13,7 @@
     },
     {
         "name": "فندق الشام",
-        "location": "https://maps.app.goo.gl/R6rzDMUJVoyXCh3WA",
+        "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.406489362588!2d36.29339989999999!3d33.516815600000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e731af5a6aff%3A0x6493a0bf6d4ca5bf!2z2YHZhtiv2YIg2KfZhNi02KfZhQ!5e0!3m2!1sar!2s!4v1742499396299!5m2!1sar!2s",
         "address": "3 ميسلون، دمشق، سوريا",
         "price_range": "high",
         "description":"يُعد من أقدم وأشهر الفنادق في دمشق، ويقع في منطقة عرنوس. يتميز بموقعه القريب من الأسواق والمناطق التجارية، ويوفر خدمات متنوعة مثل المطاعم والمسابح وقاعات الاجتماعات.",
@@ -25,7 +25,7 @@
     },
     {
         "name": "فندق بيت الوالي",
-        "location": "https://maps.app.goo.gl/znHgziGVNSxS5bWc9",
+        "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.6066460859483!2d36.314145599999996!3d33.511609799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e6da8e7538f5%3A0x805421b9c33e9b11!2z2YHZhtiv2YIg2KjZitiqINin2YTZiNin2YTZig!5e0!3m2!1sar!2s!4v1742499434887!5m2!1sar!2s",
         "address": "باب توما، دمشق، سوريا",
         "price_range": "medium",
         "description":"يقع في منطقة باب توما في دمشق القديمة، وهو فندق فاخر يعكس الطابع الدمشقي التقليدي. يتميز بتصميمه الداخلي الذي يجمع بين التراث والحداثة، ويوفر تجربة إقامة فريدة في أجواء تاريخية.",
@@ -64,6 +64,7 @@
         "location": "https://maps.app.goo.gl/LmHGxFv2rWTd3g7S6",
         "address": "باب شرقي، دمشق، سوريا",
         "price_range": "medium",
+        "description":"",
         "rating": "4.4",
         "has_activity": "0",
         "room_sizes": "غرف متوسطة الحجم",
@@ -75,6 +76,7 @@
         "location": "https://maps.app.goo.gl/H8bK3mNp5kLQoC8A8",
         "address": "ساحة المرجة، دمشق، سوريا",
         "price_range": "low",
+        "description":"",
         "rating": "4.1",
         "has_activity": "0",
         "room_sizes": "غرف اقتصادية",
@@ -86,6 +88,7 @@
         "location": "https://maps.app.goo.gl/TqB7Wbq5oL8ZgF5X8",
         "address": "شارع الفردوس، دمشق، سوريا",
         "price_range": "high",
+        "description":"",
         "rating": "4.9",
         "has_activity": "1",
         "room_sizes": "أجنحة فاخرة",

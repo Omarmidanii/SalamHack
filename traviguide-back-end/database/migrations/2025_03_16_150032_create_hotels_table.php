@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('location')->nullable();
-            $table->string('description')->nullable();
+            $table->text('location')->nullable();
+            $table->text('description')->nullable();
             $table->string('address')->nullable();
             $table->enum('price_range', ['low', 'medium', 'high'])->nullable();
             $table->string('rating')->nullable();
